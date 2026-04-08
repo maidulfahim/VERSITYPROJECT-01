@@ -1,0 +1,586 @@
+/* Events Page Specific Styles */
+
+.events-main {
+    width: 100%;
+}
+
+/* ===== Page Header ===== */
+.page-header {
+    background: white;
+    padding: 32px;
+    border-radius: 12px;
+    margin-bottom: 24px;
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-content h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 8px;
+}
+
+.header-content p {
+    color: var(--text-secondary);
+    font-size: 1rem;
+}
+
+.create-event-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 14px 24px;
+    white-space: nowrap;
+}
+
+/* ===== Toolbar ===== */
+.events-toolbar {
+    background: white;
+    padding: 20px 24px;
+    border-radius: 12px;
+    margin-bottom: 24px;
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.filter-section {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    padding: 10px 20px;
+    border: 2px solid var(--border-color);
+    background: transparent;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.filter-btn:hover {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+}
+
+.filter-btn.active {
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+    color: white;
+}
+
+.view-toggle {
+    display: flex;
+    gap: 8px;
+    background: var(--bg-secondary);
+    padding: 4px;
+    border-radius: 8px;
+}
+
+.view-btn {
+    padding: 8px 12px;
+    background: transparent;
+    border: none;
+    border-radius: 6px;
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.view-btn:hover {
+    color: var(--primary-color);
+}
+
+.view-btn.active {
+    background: white;
+    color: var(--primary-color);
+    box-shadow: var(--shadow-sm);
+}
+
+/* ===== Events Grid ===== */
+.events-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 24px;
+    margin-bottom: 32px;
+}
+
+.events-grid.list-view {
+    grid-template-columns: 1fr;
+}
+
+.events-grid.list-view .event-card {
+    display: flex;
+    flex-direction: row;
+}
+
+.events-grid.list-view .event-image {
+    width: 250px;
+    height: auto;
+    flex-shrink: 0;
+}
+
+/* ===== Event Card ===== */
+.event-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    transition: all 0.3s;
+    cursor: pointer;
+}
+
+.event-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.event-image {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+}
+
+.event-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+
+.event-card:hover .event-image img {
+    transform: scale(1.05);
+}
+
+.event-badge {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    padding: 6px 14px;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.event-badge.tech {
+    background: #dbeafe;
+    color: #1e40af;
+}
+
+.event-badge.academic {
+    background: #d1fae5;
+    color: #065f46;
+}
+
+.event-badge.social {
+    background: #fce7f3;
+    color: #9f1239;
+}
+
+.event-badge.workshop {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+.event-badge.sports {
+    background: #ffedd5;
+    color: #9a3412;
+}
+
+.event-card-content {
+    padding: 24px;
+}
+
+.event-date-tag {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--primary-color);
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+.event-card-content h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 12px;
+    line-height: 1.3;
+}
+
+.event-card-content > p {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 16px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.event-meta {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 16px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.event-location,
+.event-attendees {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.85rem;
+    color: var(--text-light);
+}
+
+.event-register-btn {
+    width: 100%;
+    padding: 12px 24px;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.event-register-btn:hover {
+    background: var(--primary-dark);
+}
+
+.event-register-btn.registered {
+    background: var(--success-color);
+}
+
+.event-register-btn.registered:hover {
+    background: #059669;
+}
+
+/* ===== Load More ===== */
+.load-more-section {
+    text-align: center;
+    padding: 20px 0;
+}
+
+.load-more-btn {
+    padding: 14px 32px;
+    font-size: 1rem;
+}
+
+/* ===== Calendar Widget ===== */
+.mini-calendar {
+    font-size: 0.85rem;
+}
+
+.calendar-header {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 8px;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--text-secondary);
+    text-align: center;
+}
+
+.calendar-body {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 8px;
+    text-align: center;
+}
+
+.calendar-body span {
+    padding: 8px 4px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.calendar-body span:not(:empty):hover {
+    background: var(--bg-secondary);
+}
+
+.calendar-body span.today {
+    background: var(--primary-color);
+    color: white;
+    font-weight: 600;
+}
+
+.calendar-body span.has-event {
+    background: #fef3c7;
+    color: var(--text-primary);
+    font-weight: 600;
+    position: relative;
+}
+
+.calendar-body span.has-event::after {
+    content: '';
+    position: absolute;
+    bottom: 2px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4px;
+    height: 4px;
+    background: #f59e0b;
+    border-radius: 50%;
+}
+
+/* ===== My Events Widget ===== */
+.my-event-item {
+    display: flex;
+    gap: 12px;
+    padding: 12px;
+    border-radius: 8px;
+    transition: all 0.2s;
+    cursor: pointer;
+    margin-bottom: 8px;
+}
+
+.my-event-item:hover {
+    background: var(--bg-secondary);
+}
+
+.my-event-date {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: var(--primary-color);
+    color: white;
+    padding: 8px 12px;
+    border-radius: 8px;
+    min-width: 50px;
+}
+
+.my-event-day {
+    font-size: 1.25rem;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.my-event-month {
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.my-event-info {
+    flex: 1;
+}
+
+.my-event-info h4 {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 4px;
+}
+
+.my-event-info span {
+    font-size: 0.8rem;
+    color: var(--text-light);
+}
+
+/* ===== Category Stats ===== */
+.category-stats {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.category-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 8px;
+    border-radius: 6px;
+    transition: all 0.2s;
+    cursor: pointer;
+}
+
+.category-item:hover {
+    background: var(--bg-secondary);
+}
+
+.category-color {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.category-color.tech {
+    background: #3b82f6;
+}
+
+.category-color.academic {
+    background: #10b981;
+}
+
+.category-color.social {
+    background: #ec4899;
+}
+
+.category-color.workshop {
+    background: #f59e0b;
+}
+
+.category-color.sports {
+    background: #f97316;
+}
+
+.category-name {
+    flex: 1;
+    font-size: 0.9rem;
+    color: var(--text-primary);
+    font-weight: 500;
+}
+
+.category-count {
+    font-size: 0.85rem;
+    color: var(--text-light);
+    font-weight: 600;
+}
+
+/* ===== Responsive Design ===== */
+@media (max-width: 1024px) {
+    .events-grid {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .page-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+    }
+
+    .create-event-btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .events-toolbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .filter-section {
+        width: 100%;
+        overflow-x: auto;
+        flex-wrap: nowrap;
+        padding-bottom: 8px;
+    }
+
+    .filter-btn {
+        white-space: nowrap;
+    }
+
+    .view-toggle {
+        align-self: flex-end;
+    }
+
+    .events-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .events-grid.list-view .event-card {
+        flex-direction: column;
+    }
+
+    .events-grid.list-view .event-image {
+        width: 100%;
+        height: 200px;
+    }
+}
+
+@media (max-width: 480px) {
+    .header-content h1 {
+        font-size: 1.5rem;
+    }
+
+    .page-header {
+        padding: 20px;
+    }
+
+    .events-toolbar {
+        padding: 16px;
+    }
+
+    .event-card-content {
+        padding: 16px;
+    }
+
+    .event-card-content h3 {
+        font-size: 1.1rem;
+    }
+
+    .event-meta {
+        flex-direction: column;
+        gap: 8px;
+    }
+}
+
+/* ===== Hide Event Animation ===== */
+.event-card.hidden {
+    display: none;
+}
+
+.event-card.fade-in {
+    animation: fadeIn 0.4s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===== Empty State ===== */
+.empty-state {
+    text-align: center;
+    padding: 60px 20px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: var(--shadow-sm);
+}
+
+.empty-state svg {
+    width: 80px;
+    height: 80px;
+    color: var(--text-light);
+    margin-bottom: 20px;
+}
+
+.empty-state h3 {
+    font-size: 1.5rem;
+    color: var(--text-primary);
+    margin-bottom: 12px;
+}
+
+.empty-state p {
+    color: var(--text-secondary);
+    margin-bottom: 24px;
+}

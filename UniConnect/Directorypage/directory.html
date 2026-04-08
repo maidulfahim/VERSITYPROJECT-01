@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Store - UniConnect</title>
+    <link rel="stylesheet" href="directory-styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-container">
+            <div class="logo">
+                <svg width="28" height="28" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="32" height="32" rx="8" fill="#3498db"/>
+                    <path d="M16 8L8 14V24H13V19H19V24H24V14L16 8Z" fill="white"/>
+                </svg>
+                UniConnect Store
+            </div>
+            <nav class="nav-menu">
+                <a href="../HOMEpage/index.php">Home</a>
+                <a href="../Eventpage/events.html">Events</a>
+                <a href="../Clubpage/clubs.html">Clubs</a>
+                <a href="directory.html" class="active">Store</a>
+                <a href="../Profilepage/index.html">Profile</a>
+            </nav>
+            <div class="cart-icon-wrapper">
+                <button id="cartBtn" class="cart-btn">
+                    🛒 <span id="cartCount" class="cart-count">0</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <section class="store-hero">
+            <div class="hero-content">
+                <h1>UniConnect Student Store</h1>
+                <p>Discover and buy products from fellow students</p>
+            </div>
+        </section>
+
+        <!-- Search and Filter Section -->
+        <section class="search-filter-section">
+            <div class="container">
+                <div class="search-bar">
+                    <input 
+                        type="text" 
+                        id="searchInput" 
+                        class="search-input" 
+                        placeholder="Search products by name..."
+                    >
+                    <button class="search-btn">
+                        <span>🔍</span>
+                    </button>
+                </div>
+
+                <div class="filter-controls">
+                    <div class="filter-group">
+                        <label for="categoryFilter">Category:</label>
+                        <select id="categoryFilter" class="filter-select">
+                            <option value="all">All Categories</option>
+                            <option value="books">Books & Notes</option>
+                            <option value="electronics">Electronics</option>
+                            <option value="clothing">Clothing</option>
+                            <option value="accessories">Accessories</option>
+                            <option value="food">Food & Snacks</option>
+                            <option value="sports">Sports</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-group">
+                        <label for="priceFilter">Price Range:</label>
+                        <select id="priceFilter" class="filter-select">
+                            <option value="all">All Prices</option>
+                            <option value="0-500">Under Rs. 500</option>
+                            <option value="500-1000">Rs. 500 - 1000</option>
+                            <option value="1000-2000">Rs. 1000 - 2000</option>
+                            <option value="2000+">Rs. 2000+</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-group">
+                        <label for="conditionFilter">Condition:</label>
+                        <select id="conditionFilter" class="filter-select">
+                            <option value="all">All Conditions</option>
+                            <option value="new">New</option>
+                            <option value="like-new">Like New</option>
+                            <option value="used">Used</option>
+                        </select>
+                    </div>
+
+                    <button id="resetFilter" class="reset-btn">Reset Filters</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Results Count -->
+        <section class="results-section">
+            <div class="container">
+                <p class="results-count">Showing <span id="resultsCount">0</span> products</p>
+            </div>
+        </section>
+
+        <!-- Product Cards -->
+        <section class="store-section">
+            <div class="container">
+                <div id="directoryGrid" class="directory-grid">
+                    <!-- Products will be populated by JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <!-- No Results Message -->
+        <section id="noResults" class="no-results" style="display: none;">
+            <div class="container">
+                <div class="no-results-content">
+                    <h2>No products found</h2>
+                    <p>Try adjusting your search or filters</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Shopping Cart Modal -->
+    <div id="cartModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Shopping Cart</h2>
+                <button class="close-btn" onclick="closeCart()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div id="cartItems" class="cart-items">
+                    <!-- Cart items will be populated here -->
+                </div>
+                <div id="emptyCart" class="empty-cart" style="display: none;">
+                    <p>Your cart is empty</p>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="cart-total">
+                    <span>Total:</span>
+                    <span id="cartTotal">Rs. 0</span>
+                </div>
+                <button class="checkout-btn" onclick="checkout()">Proceed to Checkout</button>
+                <button class="close-modal-btn" onclick="closeCart()">Continue Shopping</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <p>&copy; 2026 UniConnect Student Store. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Contact Us</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="directory-script.js"></script>
+</body>
+</html>
